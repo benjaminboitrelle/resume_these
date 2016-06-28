@@ -1,0 +1,211 @@
+\documentclass[a4papper, 10pt]{article}
+
+ \usepackage[utf8]{inputenc}
+ \usepackage[T1]{fontenc}
+ \usepackage[normalem]{ulem}
+ \usepackage[french]{babel}
+ \usepackage{graphicx}
+ \usepackage{caption}
+ \usepackage{subcaption}
+ \usepackage{enumerate}
+ \usepackage{array}
+ \usepackage{amsmath,amssymb,mathrsfs}
+ \usepackage{url}
+ \usepackage{fullpage}
+ 
+ \title{\textbf{Intelligent detection layers for advanced tracking in high-energy physics} \\ \large \vskip 1ex
+        Résumé de la thèse de doctorat}
+\author{Benjamin Boitrelle \\ 
+        Sous la direction de : \\
+        Jérôme Baudot : Directeur de thèse à l'Université de Strasbourg \\
+        Ingrid Maria Gregor : Encadrante au laboratoire d'accueil au DESY de Hambourg}
+ \date{}
+
+ \begin{document}
+
+    \maketitle
+
+% Questions posées : Flavor-tagging ILC, rapport embranchement du Higgs
+% Méthode : montrer analyse Higgs avec résultats rapport d'embranchement
+%           discuter 
+% Résultats
+
+Le 4 juillet 2012 au CERN à Genève (Suisse), les collaborations ATLAS et CMS ont annoncé les premiers résultats d'analyse des données acquises grâce au LHC. 
+Les deux expériences annoncent avoir découvert le signe d'une particule compatible au boson prédit par le mécanisme de la brisure de la symétrie électro-faible de Brout-Englert-Higgs, le boson de Higgs.
+Bien que l'augmentation de l'énergie de collision du LHC pourrait permettre une meilleure compréhension de cette nouvelle particule et de contraindre encore plus les limites du Modèle Standard, voire de découvrir des traces de physique au delà de cette théorie, l'accès à certains paramètres fondamentaux est limité par es évènement complexes générés.
+En effet, les protons sont des particules composites dot les paramètres fondamentaux de la collision ne sont pas directement accessibles.
+Des mesures de précision ne peuvent être effectuées uniquement avec des particules fondamentales, comme les leptons.         
+
+
+    \section{Contexte de la thèse}
+
+        % Le Large Hadron Collider (LHC) a permis de faire de grandes avancées dans la compréhension de l'univers, avec notamment la découverte en 2012 d'une nouvelle particule compatible au boson prédit par le mécanisme de Brout-Englert-Higgs, le Higgs. Bien que l'amélioration du LHC pourrait permettre une meilleure compréhension de cette particule et de découvrir une nouvelle physique au delà du Modèle Standard, sa structure et sa capacité ne permettraient pas de connaître toutes les propriétés de l'univers.
+
+        % C'est pourquoi, un des plus grands projets scientifiques, complémentaire au LHC, est à l'étude. L'International Linear Collider (ILC) sera un collisionneur linéaire électron-positron d'une longueur de 31 kilomètres. Il devrait permettre de mieux caractériser les particules déjà connues (comme le boson de Higgs grâce à son couplage avec les fermions), mais aussi d'étudier la matière noire. Ce projet impose de nouveaux défis tant sur la physique que sur l'instrumentation. 
+        % Par exemple, pour mesurer le couplage du Higgs aux quarks charmé, par la détection des vertex secondaires très proches du lieu de collision, est primordiale. Pour cela, la partie centrale du détecteur dédiée à la reconstruction de vertex doit avoir à la fois une excellente résolution spatiale ($\leq$ 3 $\mu m$) et un budget de matière ne dépassant pas quelques fractions de la longueur de radiation ($X_0$). Ce sous-détecteur, appelé détecteur de vertex, doit être optimisé afin de permettre la trajectométrie dans un milieu hautement dense en particules. 
+
+        % La collaboration PLUME met en place les outils permettant de surmonter ces challenges grâce à une conception innovante d'échelles de trajectométrie double face pixelisée, appelée PLUME\footnote{\textbf{P}ixelated \textbf{L}adder with \textbf{U}ltra low \textbf{M}aterial \textbf{E}mbeded}. Ce type d'objet est équipé de capteurs à pixels CMOS ultra fin sur chaque face du support mécanique et tente d'atteindre un record au niveau du budget de matière en se rapprochant de 0.3\% de $X_0$ pour la mesure en deux points d'une trajectoire.
+        % Ces deux mesures permettront d'évaluer le point d'intersection de la particule avec le détecteur, mais aussi sa trajectoire et son origine. Si les outils permettant cette double mesure sont maitrisés et optimisés, cela augmentera considérablement les capacités de trajectométrie de ce type d'instrument.
+
+        Le \textbf{L}arge \textbf{H}adron \textbf{C}ollider (LHC) est actuellement notre plus grand outil pour avancer dans la compréhension de l'Univers, avec notamment la découverte en 2012 d'une nouvelle particule compatible au boson prédit par le mécanisme de brisure de la symétrie électro-faible de Brout-Englert-Higgs, le Higgs. Bien que l'augmentation de l'énergie de collision du LHC pourrait permettre une meilleure compréhension de cette particule et de découvrir une nouvelle
+        physique au delà du Modèle Standard, l'environnement complexe des évènements générés masque l'accès de certains paramètres fondamentaux.  
+        
+        C'est pourquoi, un des plus grands projets scientifiques, complémentaire au LHC, est à l'étude. L'\textbf{I}n\-ter\-na\-tio\-nal \textbf{L}inear \textbf{C}ollider (ILC) sera un collisionneur linéaire électron-positron d'une longueur de 31 kilomètres. Il devrait permettre de mieux caractériser les particules déjà connues (comme le boson de Higgs grâce à son couplage avec les fermions), mais aussi d'étudier la matière noire. Ce projet impose de nouveaux défis d'instrumentation. 
+        Par exemple, la mesure du couplage du Higgs aux quarks charmés, par la détection des vertex secondaires très proches du lieu de collision, est primordiale. Pour cela, la partie centrale du détecteur dédiée à la reconstruction de vertex doit avoir à la fois une excellente résolution spatiale ($\leq$ 3 $\mu m$) et un budget de matière ne dépassant pas quelques millièmes de la longueur de radiation ($X_0$). Ce sous-détecteur, appelé détecteur de vertex, doit être optimisé afin de permettre la trajectométrie dans un milieu hautement dense en particules. 
+      
+        La collaboration PLUME, qui implique l'IPHC de Strasbourg, le DESY à Hambourg et l'université de Bristol, met en place les outils permettant de surmonter ces défis grâce à une conception innovante d'échelles de trajectométrie double face pixelisée, appelée PLUME\footnote{\textbf{P}ixelated \textbf{L}adder with \textbf{U}ltra low \textbf{M}aterial \textbf{E}mbeded}. Ce type d'objet est équipé de six capteurs à pixels CMOS ultra fins, alignés l'un à côté de l'autre, sur chaque face d'un support mécanique très léger et tente d'atteindre un record au niveau du budget de matière en se rapprochant de 0.3\% de $X_0$.
+       Pour chaque trajectoire, deux positions seront mesurées, une par face. Elles permettront d'évaluer le point d'intersection de la particule avec le détecteur, mais aussi son mouvement et son origine. Si les outils permettant cette double mesure sont maitrisés et optimisés, cela augmentera considérablement les capacités de trajectométrie de ce type d'instrument.
+
+       Au cours de mon doctorat, je dois caractériser complètement les échelles PLUME afin de démontrer que leur performances atteignent les spécifications attendues (excellente résolution spatiale, un budget de matière très faible, une vitesse de lecture des capteurs ultra rapide). Une fois les propriétés de ces échelles démontrées, j'étudierai comment tirer profit d'une mesure double-face dans une analyse de physique.
+
+       %Tu dois terminer cette introduction avec tes objectifs : 1/ caratériser intégralement les échelles PLUME afin de démontrer que leur performances remplissent les spécifications que tu as aénnoncé (résolution, budget de mat, vitesse, …) 2/ étudier comment tirer parti aux mieux une mesure double-face dans une analyse de physique.
+
+    \section{Études réalisées lors de la première année}
+        \subsection{Prise en main et caractérisation des échelles PLUME}
+
+        Afin de pouvoir valider les prototypes d'échelles PLUME en laboratoire, il faut d'abord prendre en main les outils permettant de piloter et de caractériser chaque capteur (voir paragraphe suivant). J'ai donc travaillé à Strasbourg en septembre 2013 pour apprendre le fonctionnement des capteurs CMOS MIMOSA-26\footnote{Baudot J et al 2009 First test results of MIMOSA-26, a fast CMOS sensor with integrated zero suppression and digitized output Nucl. Sci. Symp. Conf. Rec. (NSS/MIC) 2009 IEEE pp 1169–73} développés par le groupe PICSEL de l'IPHC.
+        %Suite à ce séjour, j'ai mis en place au DESY à Hambourg un banc de caractérisation similaire à celui de Strasbourg, permettant d'étudier les capteurs pour les télescopes EUDET mais aussi pour mon étude des échelles PLUME.
+        Suite à ce séjour, j'ai mis en place au DESY à Hambourg un banc de caractérisation similaire à celui de Strasbourg, permettant d'étudier les échelles PLUME. Le laboratoire hambourgeois est désormais le lieu de test de ces échelles. Dans les mois à venir, de nouveaux modules vont m'être envoyés pour qualifier leur comportement.
+        De plus, ce banc de test peut-être aussi utilisé pour caractériser les MIMOSA-26 qui constituent le télescope EUDET, outil destiné à la communauté scientifique européenne pour des test en faisceaux et dont mon équipe du DESY à la charge.
+
+        
+        %La validation des MIMOSA-26 se fait en plusieurs étapes.
+        %Il faut d'abord vérifier que ses consommations correspondent bien à celles attendues et qu'il n'y ait pas de court-circuit. 
+        %Ensuite, il faut s'assurer que la communication entre l'ordinateur et le module est bonne, c'est-à-dire que l'on puisse le contrôler et qu'il nous renvoie les informations dans le format attendu.
+        %Après cette étape, il faut déterminer si des pixels sont morts (sont activés ou non en permanence) et le seuil des discriminateurs : leur point de fonctionnement optimal, leur bruit et leur offset (figure \ref{noise}). Ces résultats sont obtenus grâce à une fonction de transfert qui représente la réponse des discriminateurs à différents seuils (figure \ref{SCurve}). 
+        %Enfin, une analyse permet d'estimer le taux de pixels fantômes (le nombre de pixels renvoyant un signal dans le noir total). 
+        %Pour vérifier le bon fonctionnement des capteurs, il est possible de positionner une source de $^{55}$Fe émettrice de rayons X au dessus de la matrice afin de s'assurer que celui-ci est bien capable de détecter des particules. 
+
+        Les MIMOSA-26 sont des détecteurs monolithiques complexes. Le traitement des données est directement intégré dans les photocites qui collectent les charges. Il permet de numériser directement le signal, grâce à des discriminateurs et de réduire la bande-passante de transmission des données par le biais d'un système de suppression de zéro (ne prend pas en compte les zéros envoyés par les pixels, qui ne représentent pas un signal physique intéressant).
+        Cette méthode permet d'enregistrer les informations individuelles de plus de un million d'impacts/cm$^2$/s sur un capteur contenant plus de 500000 pixels sur une surface de 2 cm$^2$.
+        
+        La validation de chaque capteur se fait en plusieurs étapes. Bien entendu, la première partie consiste à vérifier qu'il n'y ait pas de court-circuit, que les consommations correspondent bien à celles attendues, que la communication avec l'objet est possible et si des pixels sont morts (sont activés ou non en permanence).
+        L'étude cruciale est d'évaluer les seuils des comparateurs qui vont permettre de discriminer le signal du bruit, ces paramètres gouvernent en effet l'efficacité des capteurs. Il est important de déterminer leur point de fonctionnement optimal, leur bruit et leur offset (figure \ref{noise}). Ces résultats sont obtenus grâce à une fonction de transfert qui représente la réponse des discriminateurs à différents seuils (figure \ref{SCurve}), et permettent d'en trouver un où le bruit du capteur est supprimé sans en altérer ses capacités de détection.
+        Enfin, une analyse permet d'estimer le taux de pixels fantômes (le nombre de pixels renvoyant aléatoirement un signal dans le noir total). 
+        
+        
+ \begin{figure}
+     \centering
+     \begin{subfigure}[c]{0.46\linewidth}
+        \includegraphics[width = 8cm]{Pictures/transfer_A.png}
+        \caption{Fonction de transfert représentant la réponse des discriminateurs pour différents seuils.}
+        \label{SCurve}
+     \end{subfigure}
+     \quad
+     \begin{subfigure}[c]{0.46\linewidth}
+        \includegraphics[width = 8cm]{Pictures/noise_A.png}
+        \caption{Résultats de l'analyse de la fonction de transfert qui permettent de déterminer la dispersion des discriminateurs, leur niveau de bruit ainsi que leur offset.}
+        \label{noise}
+     \end{subfigure}
+     \caption{Caractérisation des seuils du capteur.}
+ \end{figure}
+
+        \subsection{Étude de la déformation des capteurs}
+
+
+        % En Octobre 2011, une campagne de tests en faisceau a été effectuée au CERN avec le premier prototype de l'échelle PLUME dont le budget de matière atteignait les 0.6\% de X$_0$. L'analyse de ces données a permis de déterminer la résolution spatiale de notre objet mais aussi de mettre en avant les avantages d'une double mesure sur la trajectoire des particules.
+        % Afin d'obtenir les meilleurs résultats possible, il faut aligner l'objet étudié avec des plans de références qui déterminent la trajectoire de chaque particule. À partir de l'analyse de ces données, il a été montré que l'alignement de l'échelle était plus compliquée lorsque celle-ci est inclinée dans une direction et que les particules ne la touchent plus dans une incidence normale.
+        % Les résultats ont aussi montré que la résolution spatiale se voyait dégrader. 
+        % Ces résultats viennent en fait de notre manière de reconstruire les données. En effet, les capteurs sont considérés comme des surfaces planes, mais en réalité, ils subissent des contraintes mécanique et thermique qui ne permettent plus de considérer cette hypothèse. Ainsi, l'écart entre la position du pixel touché et la trajectoire de la particule, appelé aussi le résidu, devient plus important.
+       
+        En Octobre 2011, une campagne de tests en faisceau a été effectuée au CERN avec le premier prototype de l'échelle PLUME dont le budget de matière atteignait les 0.6\% de X$_0$. L'analyse de ces données a permis de %déterminer la résolution spatiale de notre objet mais aussi de 
+        mettre en avant les avantages d'une double mesure sur la trajectoire des particules, à savoir, une amélioration de la résolution spatiale et une évaluation de la direction angulaire de la trajectoire.
+        %À partir de l'analyse de ces données, il a été montré que l'alignement de l'échelle était plus compliquée lorsque celle-ci est inclinée dans une direction et que les particules ne la touchent plus dans une incidence normale.
+        Mais les résultats ont aussi montré que lorsque notre échelle est inclinée dans une direction et que les particules ne la touchent plus en incidence normale, la résolution spatiale se dégrade dans des proportions inattendues.
+        Des effets similaires ont été obtenus lors d'une campagne de test en faisceau au DESY en février dernier pour les modules SALAT\footnote{\textbf{S}ingle \textbf{A}rmed \textbf{L}arge \textbf{A}rea \textbf{T}elescope, un nouveau télescope avec une large surface de détection pour le projet européen AIDA de développement de nouveaux outlis destinés à l'étude de nouveaux détecteurs pour la physique des particules.} qui ont une configuration géométrique différente des échelles PLUME et sont équipés de capteurs différents (la technologie utilisée est similaire à celle des MIMOSA-26). 
+        
+        En fait, l'élargissement de la distribution du résidu, qui correspond à la distance entre la position du pixel touché et la trajectoire de la particule extrapolée sur le capteur, par rapport aux attentes est une conséquence des caractéristiques de nos échelles, ou modules. En effet, ce sont les premiers objets fabriqués avec des capteurs ultra fins (d'une épaisseur de seulement 50 $\mu m$) et ultra précis (résolution spatiale inférieure à $4\mu m$). Les contraintes mécaniques induisent des déformations permanentes de quelques dizaines de micromètres de la surface qui ne peuvent être contrôlées lors de la construction.
+        Apprendre à quantifier ces déformations et les prendre en compte dans notre analyse est essentiel pour valider nos prototypes.
+
+        %Ces résultats viennent aussi de notre manière de reconstruire les données. 
+        En effet, lors de l'analyse, l'hypothèse d'une surface parfaitement plane est utilisée pour modéliser nos capteurs. Or, la position de ces plans en 3 dimensions est différente puisque ceux-ci peuvent être plus ou moins déformés.
+        %Ainsi, la distance entre la position du pixel touché et la trajectoire de la particule extrapolée sur le capteur, appelé aussi le résidu, devient plus important.
+        Ainsi, comme il a été observé, la distribution du résidu devient plus importante lorsque l'angle d'incidence n'est plus normal à la surface du détecteur.
+
+        Il faut donc prendre en compte cette déformation dans notre analyse afin de recalculer la position exacte de chaque pixel en 3 dimensions et l'extrapolation exacte sur le plan de la trajectoire. Grâce à une première étude réalisée par un doctorant du groupe PICSEL et un article de la collaboration CMS sur l'alignement du trajectomètre\footnote{arXiv:0910.2505 [physics.ins-det]}, il m'a été possible de mettre en place un algorithme permettant de déterminer la forme de notre capteur à l'aide de polynômes de Legendre. 
+        En prenant en compte l'angle d'incidence des particules, la résolution spatiale est améliorée. 
+    \begin{figure}
+    \centering
+    \begin{subfigure}[c]{0.46\linewidth}
+        \includegraphics[width = 8cm]{Pictures/run226056_pl6}
+        \caption{En haut : courbe représentant le résidu en fonction de la position de l'impact sur le plan.
+        \\ En bas : courbe représentant le résidu (la résolution spatiale).}
+        \label{normal}
+    \end{subfigure}
+     \begin{subfigure}[c]{0.46\linewidth}
+        \includegraphics[width = 8cm]{Pictures/noCorrection_run226057_pl7.png}
+        \caption{En haut : courbe représentant le résidu en fonction de la position de l'impact sur le plan.
+        \\ En bas : courbe représentant le résidu, (la résolution spatiale).}
+        \label{deformed}
+    \end{subfigure}
+    \caption{Résultat de l'analyse des données de PLUME pour une acquisition où le plan est en incidence normale (\ref{normal}) et où le plan est incliné (\ref{deformed}) }
+ \end{figure}     
+
+ Par exemple, l'analyse d'une acquisition où le module PLUME est incliné de 36\degre, a mis en évidence une déformation en corrélant le résidu (distance entre la position de la trace extrapolée et du pixel touché) à la position de l'impact sur la matrice de détection (figure \ref{deformed}), par rapport à une acquisition où le plan est en incidence normale (figure\ref{normal}).
+        En ajustant la figure précédente par un polynôme de Legendre (figure \ref{legendre}), les coefficients obtenus permettent de paramétrer la surface du capteur et ainsi de minimiser le résidu (figure \ref{corrected}). 
+        La déviation standard de les distribution des résidus, qui définit la résolution spatiale, passe de 11.84 $\mu m$ à 8.2 $\mu m$, sans prendre en compte la résolution du télescope qui n'est pas dans une configuration optimale.
+        %mais ce type de capteurs peuvent atteindre une déviation inférieure à 4 $\mu m$.
+        %La résolution spatiale passe de 11.84 $\mu m$ à 8.2 $\mu m$.
+
+ \begin{figure}
+     \centering
+     \begin{subfigure}[c]{0.46\linewidth}
+        %\includegraphics[width = 8cm]{Pictures/noCorrection_run226057_pl7.png}
+        %\caption{En haut : courbe représentant le résidu en fonction de la position de l'impact sur le plan.
+        %\\ En bas : courbe représentant le résidu, c'est-à-dire la résolution spatiale.}
+        %\label{deformed}
+        \includegraphics[width = 8 cm]{Pictures/pfx_UDU_run226057_pl7}
+        \caption{Ajustement de la courbe représentant le résidu en fonction de l'impact sur le plan par un polynôme de Legendre de degré 7}
+        \label{legendre}
+     \end{subfigure}
+     \quad
+     \begin{subfigure}[c]{0.46\linewidth}
+        \includegraphics[width = 8cm]{Pictures/correction_run226057_pl7.png}
+        \caption{En haut : courbe représentant le résidu en fonction de la position de l'impact sur le plan après correction.
+        \\ En bas : courbe représentant le résidu, c'est-à-dire la résolution spatiale après correction.}
+        \label{corrected}
+     \end{subfigure}
+     \caption{Prise en compte de la déformation du capteur pour l'analyse et la correction des données.}
+ \end{figure}
+
+
+    \section{Perspectives pour la seconde année}
+
+        L'analyse de la déformation n'est pas terminée. Notre méthode de reconstruction ne permet pas encore de se rapprocher de la résolution spatiale attendue en prenant en compte la résolution des plans de références. De plus, sur la figure \ref{corrected} (celle du haut), la courbe présente encore une déviation au centre du capteur. 
+        Il faut essayer de déterminer son origine. Cela peut venir d'un artefact de reconstruction ou d'une éventuelle vibration de notre échelle lors de la mesure.
+              % Je vais par ailleurs essayer ce code sur les résultats obtenus lors des tests en faisceaux avec SALAT en février dernier puis, l'implémenter dans le logiciel d'analyse EUTelescope\footnote{Logiciel d'analyse de reconstruction des données prises avec le télescope pixélisé EUDET} et comparer les résultats obtenus avec TAF\footnote{Logiciel d'analyse des tests en faisceau développé par le groupe PICSEL}.
+
+        Je vais par ailleurs essayer ce code sur les résultats obtenus lors des tests en faisceaux avec SALAT en février dernier puis, l'implémenter dans le logiciel d'analyse EUTelescope\footnote{Logiciel d'analyse de reconstruction des données prises avec le télescope pixélisé EUDET pour l'ensemble de la communauté européenne.} et comparer les résultats obtenus avec TAF\footnote{Logiciel d'analyse des tests en faisceau développé par le groupe PICSEL pour leur télescope.}.
+
+        Je vais également continuer la mise en place du banc de caractérisation des modules au DESY afin de valider les nouveaux prototypes.
+        
+        Je vais étudier un système de \textit{power pulsing} couplé à un refroidissement par air afin de réduire la consommation des capteurs et le budget de matière. En effet, le design de l'ILC impose un long temps mort entre deux trains de particules. Ce \textit{power pulsing} consiste à baisser la tension de nos modules de détection pendant ce temps mort et à réactiver les capteurs avant l'arrivée du banc de particules.
+        Il est donc nécessaire de mettre un place un banc de test afin de connaître la stabilité d'un tel système, ainsi que le comportement des capteurs.
+        De plus, le détecteur de vertex sera plongé dans un champ magnétique de 3.5 T ce qui va induire des forces de Lorentz à cause des pulsations électriques. Il est important de déterminer l'influence de ces forces sur la résolution spatiale de nos échelles, sachant que celles-ci ont un poids de 10g. 
+       % Le design de l'ILC impose un long temps mort entre deux trains de particules. Afin de réduire la consommation des capteurs et le budget de matière, un système de \textit{power pulsing} couplé à un refroidissement par air est à l'étude. Ce \textit{power pulsing} consiste à baisser la tension de nos modules de détection pendant le temps mort et à réactiver les capteurs avant l'arrivée du banc de particules.
+       % Il est donc nécessaire de mettre un place un banc de test afin de connaître la stabilité d'un tel système, ainsi que le comportement des capteurs.
+       % De plus, le détecteur de vertex sera plongé dans un champ magnétique de 3.5 T et il est important de déterminer l'influence de ces pulsations électriques sur la résolution spatiale de nos échelles. 
+
+        %Je vais devoir étudier un système de \textit{power pulsing} des capteurs permettant de réduire leur consommation en accord avec les spécifications d'ILC. 
+        %Le design d'ILC impose un long temps mort entre deux trains de particules, ainsi un système permettant de réduire la tension des capteurs pendant le temps mort est à l'étude. 
+
+        Ces différentes études vont me permettre de mettre en place et de coordonner un test en faisceau au DESY avec les nouvelles échelles dans des conditions réelles.
+
+        Je vais, par ailleurs, commencer une nouvelle étude axée sur la simulation du canal de désintégration du Higgs en paire charme-anticharme ($H \rightarrow c \bar{c}$) dans ILC. Cette analyse est la seconde partie de ma thèse et doit permettre de mieux optimiser les caractéristiques que doivent atteindre un détecteur de vertex. En effet, les quarks charmés ont une durée de vie très courte ($1,1.10^{-12}s$) et il faut être capable de détecter et différencier leur signaux, à la fois du bruit environnant mais aussi des autres particules comme le quark beauté.
+
+        Enfin, les analyses des tests en faisceau de AIDA-SALAT doivent conduire à une note du projet AIDA. Quant aux résultats obtenus sur l'étude de la déformation des échelles PLUME, ils vont permettre l'écriture d'un article recensant toutes les caractéristiques de notre premier prototype.
+        
+    \section{Écoles suivies}
+
+    Au cours de cette première année de thèse, j'ai assisté à plusieurs écoles en Allemagne. J'ai d'abord été au Linear Collider Physics School\footnote{https://indico.desy.de/conferenceDisplay.py?confId=7513} au DESY à Hambourg du 7 au 9 octobre 2013. Cette école a abordé la physique des particules d'un point de vue théorique et pratique, ainsi que des cours sur les accélérateurs et détecteurs (19h30 de cours au total). 
+        Puis, j'ai participé au 7$^{th}$ Detector Workshop of the Terascale Alliance\footnote{https://indico.desy.de/conferenceDisplay.py?confId=9389} à Göttingen du 3 au 5 mars 2014. Pendant deux jours, une introduction sur la simulation des capteurs en silicium grâce au logiciel TCAD a été présentée (environ 15h).
+        J'ai ensuite été à l'Introduction to Terascale 2014\footnote{https://indico.desy.de/conferenceDisplay.py?confId=9263} au DESY à Hambourg du 17 au 21 mars 2014. Cette école destinée à des étudiants de master a introduit les bases de la physique des particules et a permis pars le biais de tutoriel d'apprendre à utiliser des outils informatiques pour l'analyse dans cette physique (environ 35h).
+        Enfin, je suis allé cet été au Linear Collider School 2014\footnote{https://indico.desy.de/conferenceDisplay.py?confId=9329} à Frauenchiemsee du 11 au 15 août 2014. Au cours des 25h de cours, différentes parties de la physique des particules ont été présentées : physique du top, physique du Higgs, Modèle Standard et au-delà, introduction à la cosmologie, physique des détecteurs et des accélérateurs. 
+
+        Par ailleurs, j'ai aussi suivi des cours d'allemand proposés par le DESY de septembre 2013 à février 2014 (3 heures par semaine).
+
+        Pour l'année à venir, j'ai prévu de reprendre des cours d'allemand mais aussi des cours d'anglais pour les sciences.
+ \end{document}
+
+
+
