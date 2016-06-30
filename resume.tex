@@ -50,19 +50,16 @@
   Elles permettront d'évaluer le point d'intersection de la particule avec le détecteur, mais aussi son mouvement et son origine. 
   Si les outils permettant cette double mesure sont maitrisés et optimisés, cela augmentera considérablement les capacités de trajectométrie de ce type d'instrument.
 
-  \section{Étude de la désintégration du boson de Higgs}
+  \section{Étude (simpliste) de la désintégration du boson de Higgs}
 
-  Afin de comprendre les paramètres du système de détection, j'ai démarré une analyse de physique concernant la désintégration du boson de Higgs en deux paires de quarks charmé et anti-charmé à une énergie de centre de masse de 350 GeV.
-  Comme l'expérience n'a pas encore débuté, seul des échantillons issus de simulations Monte Carlo sont disponibles.
+  Afin de comprendre les paramètres du système de détection, j'ai démarré une analyse de physique concernant la désintégration du boson de Higgs en deux paires de quarks charmé et anti-charmé à une énergie de centre de masse de 350 GeV à l'ILC, avec des données simulées par méthode Monte Carlo.
 
   L'état final qui m'a intéressé est celui où le Higgs et deux neutrinos sont produits, soit par Higgstrahlung, soit par fusion de bosons W.
   L'étude m'a d'abord permis de comprendre l'avantage de la polarisation des électrons et positrons sur le canal de physique que l'on souhaite étudier.
   Par exemple, la contribution la fusion de boson W est atténuée lorsque les électrons sont droits et les positrons gauches.
   Le signal étudié est noyé dans un bruit de fond généré par d'autres processus. 
-  En sélectionnant différentes coupes, comme le nombre de leptons seuls, l'impulsion transverse visible, la masse visible ou encore l'angle entre les deux jets, il est possible d'améliorer la significance (ratio du signal sur la racine carré du signal et du bruit) de 5 à presque 50 après sept sélections différentes. 
+  En sélectionnant différentes coupes, comme le nombre de leptons seuls, l'impulsion transverse visible, la masse visible ou encore l'angle entre les deux jets, il est possible d'améliorer la significance (ratio du signal sur la racine carré du signal et du bruit) d'un facteur 10 après sept sélections différentes. 
   Bien que le bruit soit diminué d'un facteur de plus de 200, le signal intéressant a lui aussi été diminué d'un facteur 1.4.
-  La proportion de quarks charmés identifiés à la suite de cette sélection est de ... alors que ... des b sont identifiés. 
-  Une sélection par analyse multi-variable et un desgin adéquat du détecteur de vertex permettrait d'améliorer ces résultats. A PROUVER LOL
 
   \section{Préparation d'une campagne de tests sous faisceaux}
 
@@ -72,41 +69,38 @@
   Il permet de numériser directement le signal, grâce à des discriminateurs et de réduire la bande-passante de transmission des données par le biais d'un système de suppression de zéro (ne prend pas en compte les zéros envoyés par les pixels, qui ne représentent pas un signal physique intéressant).
   Cette méthode permet d'enregistrer les informations individuelles de plus de un million d'impacts/cm$^2$/s sur un capteur contenant plus de 500000 pixels sur une surface de 2 cm$^2$.
 
-  Chaque module doit être validé en laboratoire afin de s'assurer que le processus de fabrication n'altère pas les capteurs utilisés.
-  Après une inspection visuelle afin de vérifier l'alignement de chaque capteur l'un par rapport à l'autre et qu'aucun d'eux, ni aucune connexion n'est été endommagé pendant l'assemblage, chaque échelle est testée électriquement.
-  La consommation des capteurs et le contrôle JTAG est vérifié, pour ensuite évaluer les seuils des comparateurs qui vont permettre de discriminer le signal du bruit.
-  Il est important de déterminer leur point de fonctionnement optimal, leur bruit et leur offset. 
+  Chaque module doit être validé en laboratoire afin de s'assurer que l'assemblage n'altère pas les capteurs utilisés.
+  Après une inspection visuelle afin de contrôler l'alignement de chaque capteur l'un par rapport à l'autre et qu'aucun d'eux, ni aucune connexion n'ait été endommagé pendant l'assemblage, chaque échelle est testée électriquement.
+  La consommation des capteurs, le contrôle JTAG ainsi que la présence de pixels morts sont vérifiés, pour ensuite évaluer les seuils des comparateurs qui vont permettre de discriminer le signal du bruit.
+  Leur point de fonctionnement optimal, leur bruit et offset sont obtenus grâce à une courbe de transfert qui représente la réponse des comparateurs à différents seuils et permet de définir un seuil où le bruit du capteur est supprimé sans en altérer ces capacités de détection.
   Une analyse permet enfin de déterminer le taux de fantôme de chaque capteur et de vérifier qu'ils détectent correctement une source radioactive.
   
-  Actuellement, différentes versions des échelles PLUME existent : celles dont le budget de matière est de 0.6 \% de X0 utilisant uniquement des pistes métallisées au cuivre; deux nouveaux prototypes, l'un utilisant des pistes métallisées en cuivre et l'autre en aluminium et dont les zones mortes de détection ont été réduites et dont la densité de la mousse mécanique a été diminuée de moitié, ont été produits.
-  Bien que différentes versions existent, seul les modules atteignant un budget de matière de 0.6 \% de X0 ont été étudiés lors de deux campagnes en faisceau test, l'une réalisée par la collaboration en 2011 au CERN et l'autre que j'ai mené en avril 2016 au DESY.
-  Les résultats de la première campagne a permis à la collaboration de mettre en avant les avantages d'une double mesure. 
+  Actuellement, différentes versions des échelles PLUME existent : celles dont le budget de matière est de 0.6 \% de $X_0$ utilisant uniquement des pistes métallisées en cuivre; deux nouveaux prototypes, l'un utilisant des pistes métallisées en cuivre et l'autre en aluminium et dont les zones mortes de détection ont été réduites et la densité de la mousse mécanique a été diminuée de moitié.
+  Bien que différentes versions existent, seuls les modules atteignant un budget de matière de 0.6 \% de $X_0$ ont été étudiés lors de deux campagnes en faisceau test, l'une réalisée par la collaboration en 2011 au CERN et l'autre que j'ai mené en avril 2016 au DESY.
+  Les résultats de la première campagne ont permis à la collaboration de mettre en avant les avantages d'une double mesure. 
   De ces résultats, je me suis intéressé à l'étude des déformations mécaniques de nos échelles et leur impact sur les résultats d'analyse.
-  En effet, ce sont les premiers objets fabriqués avec des capteurs ultra fins (d'une épaisseur de seulement 50 $\mu$m) et ultra précis. 
-  Les contraintes mécaniques induisent des déformations permanentes de quelques dizaines de micromètres de la surface qui ne peuvent être contrôlées lors de la construction.
-  Apprendre à quantifier ces déformations et les prendre en compte pendant notre analyse est essentiel pour valider nos prototypes.
   En effet, lorsque l'échelle est inclinée dans une direction et que le faisceau ne la touche plus en incidence normale, la résolution spatiale se dégrade dans des proportions inattendues.
-  Lors des l'analyse, les capteurs sont modélisés par une surface parfaitement plane.
+  Ce comportement est dû aux contraintes mécaniques qui induisent des déformations permanentes de quelques dizaines de micromètres de la surface ne pouvant être contrôlées lors de l'assemblage.
+  Apprendre à quantifier ces déformations et les prendre en compte pendant notre analyse est essentiel pour valider nos prototypes.
+  Les capteurs sont modélisés par une surface parfaitement plane.
   Or, la position de ces plans en trois dimensions est différente puisque ceux-ci peuvent être plus ou moins déformés.
   Ainsi comme il a été observé, la distribution du résidu devient plus importante lorsque l'angle d'incidence n'est plus normal à la surface du détecteur.
   Il faut donc prendre en compte cette déformation dans notre analyse afin de recalculer la position exacte de chaque pixel en 3 dimensions et l'extrapolation exacte sur le plan de la trajectoire. 
   Grâce à une première étude réalisée par un doctorant du groupe PICSEL et un article de la collaboration CMS sur l'alignement du trajectomètre\footnote{arXiv:0910.2505 [physics.ins-det]}, il m'a été possible de mettre en place un algorithme permettant de déterminer la forme de notre capteur à l'aide de polynômes de Legendre. 
   En prenant en compte l'angle d'incidence des particules, la résolution spatiale est améliorée. 
-  Par exemple, l'analyse d'une acquisition où le module PLUME est incliné de 36\degre, a mis en évidence une déformation en corrélant le résidu (distance entre la position de la trace extrapolée et du pixel touché) à la position de l'impact sur la matrice de détection (figure \ref{deformed}), par rapport à une acquisition où le plan est en incidence normale (figure\ref{normal}).
-  En ajustant la figure précédente par un polynôme de Legendre (figure \ref{legendre}), les coefficients obtenus permettent de paramétrer la surface du capteur et ainsi de minimiser le résidu (figure \ref{corrected}). 
+  Par exemple, l'analyse d'une acquisition où le module PLUME est incliné de 36\degre, a mis en évidence une déformation en corrélant le résidu (distance entre la position de la trace extrapolée et du pixel touché) à la position de l'impact sur la matrice de détection, par rapport à une acquisition où le plan est en incidence normale.
+  En ajustant la figure précédente par un polynôme de Legendre, les coefficients obtenus permettent de paramétrer la surface du capteur et ainsi de minimiser le résidu. 
   La déviation standard de les distribution des résidus, qui définit la résolution spatiale, passe de 11.84 $\mu m$ à 8.2 $\mu m$, sans prendre en compte la résolution du télescope qui n'est pas dans une configuration optimale.
 
-  Nos échelles doivent avoir des performances similaires à basse énergie.
+  Nos échelles doivent avoir des performances similaires à basse énergie à celles obtenus lors du précédent faisceau test.
   C'est pourquoi, j'ai préparé et effectué une deuxième campagne de faisceau test avec des électrons de quelques GeV au DESY en avril 2016.
   Avant d'effectuer cette expérience, il m'a fallu m'assurer de l'intégration de notre détecteur au sein du système d'acquisition EUDAQ fournit par le DESY. 
-  Une simulation estimant la résolution spatiale en fonction de différentes configurations de géométrie de télescope m'ont permis de concentrer sur un système comportant quatre plans de télescope.
-  Comme la technologie des capteurs utilisés pour le télescope et PLUME sont les mêmes, le système d'acquisition a été simplifié. 
-  Des mesures de plusieurs heures ont permis de vérifier la stabilité du système. 
-  En même temps, un support rotatif a été imaginé afin de maintenir l'échelle à la position verticale.
-  La rotation est effectuée grâce à un contrôleur et a permis pendant l'expérience de prendre des données pour des angles variant de 0 à 60 degrés. 
-  L'analyse est en cours de route et devrait permette de confirmer l'avantage d'une mesure double face grâce à la reconstruction de mini-vecteurs (combinaison de deux hits sur chaque face de l'échelle) donnant une information sur la résolution angulaire et améliorant la résolution du détecteur, mais également l'analyse devrait permettre d'estimer et de comparer le budget de matière aux données théoriques.
-   
-
+  Un outil de simulation estimant la résolution spatiale en fonctions de différentes géométrie de télescope m'a permis de définir une géométrie optimale pour étudier à la fois les caractéristiques attendues de l'échelle, mais aussi de pouvoir déterminer son budget de matière et le comparer aux attentes théoriques.
+  Comme la technologie des capteurs utilisés pour le télescope et PLUME sont les mêmes, le système d'acquisition a été simplifié : deux plans de télescopes sont positionnés de part et d'autres du détecteur afin de mesurer la trajectoire des particules. 
+  Des mesures de plusieurs heures ont permis de vérifier la stabilité du système d'acquisition. 
+  En même temps, un support rotatif a été imaginé afin de maintenir l'échelle à la position verticale et de permettre une prise de données pour des angles variants de 0\degre à 60\degre.
+  L'analyse est actuellement en cours et devrait permettre de confirmer l'avantage d'une mesure de la position du pixel touché sur chaque face. En effet, la combinaison des deux informations permet d'améliorer la résolution spatiale obtenue tout en donnant l'accès à une nouvelle information, la résolution angulaire de l'échelle.
+ 
   \section*{Publications et conférences}
 
   Conférences :
@@ -115,8 +109,10 @@
     "Observing and correcting the surface deformation of light pixelated detection surface"
     \item \textit{2015 International Workshop on Future Linear Colliders (LCWS15)},Novembre 2015,  Whistler (Canada); présentation orale\\
     "Double-sided pixelated layers studies from the PLUME collaboration"
-
   \end{itemize}
+  Publication :
+  
+  B. BOITRELLE, J. Baudot, G. Claus, O. Clausse, L. Cousin, R. Gauld, M. Goffe, J. Goldsteind, I.M. Gregor, M. Imhoff, U. Koetz, R. Maria, A. Nomerotski, R. Page, M. Szelezniak and M. Winter "The PLUME performance evaluation" (en préparation)
 
   \section*{Formations}
  
