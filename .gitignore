@@ -1,2 +1,4 @@
 .resume.tex.swp
 build/
+.DS_Store
+Pictures/.DS_Store
