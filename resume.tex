@@ -41,7 +41,7 @@
   \begin{figure}[!h]
     \centering
     \includegraphics[width = 0.4\textwidth]{Pictures/ILD.jpg}
-    \caption{Représentation de la structure du détecteur ILD.}
+    \caption{Schéma de l'ILD.}
     \label{fig:ILD}
   \end{figure}
  
@@ -55,9 +55,17 @@
 
   La collaboration PLUME, qui implique l'IPHC de Strasbourg, le DESY à Hambourg et l'université de Bristol, met en place les outils permettant de surmonter ces défis grâce à une conception innovante d'échelles de trajectométrie double face pixelisée, appelée PLUME\footnote{\textbf{P}ixelated \textbf{L}adder with \textbf{U}ltra low \textbf{M}aterial \textbf{E}mbeded}\cite{PLUME}. 
   Ce type d'objet est équipé de six capteurs à pixels CMOS ultra fins, alignés l'un à côté de l'autre, sur chaque face d'un support mécanique très léger et tente d'atteindre un record au niveau du budget de matière en se rapprochant de 0.3\% de $X_0$.
+  La figure~\ref{fig:PLUME} est un schéma représentant le principe d'une échelle double face développée par la collaboration.
   Pour chaque trajectoire, deux positions seront mesurées, une par face. 
   Elles permettront d'évaluer le point d'intersection de la particule avec le détecteur, mais aussi son mouvement et son origine. 
   Si les outils permettant cette double mesure sont maitrisés et optimisés, cela augmentera considérablement les capacités de trajectométrie de ce type d'instrument.
+
+  \begin{figure}
+    \centering
+    \includegraphics[width = 0.8\textwidth]{Pictures/plume_finalGoal.png}
+    \caption{Schéma du principe final de l'échelle PLUME.}
+    \label{fig:PLUME}
+  \end{figure}
 
   Ma thèse vise à participer à la construction de la seconde génération de détecteurs de PLUME et à caractériser leurs performances.
 
@@ -69,7 +77,7 @@
         \centering
         \begin{subfigure}[t]{0.3\textwidth}
             \includegraphics[width = 0.8\textwidth]{Pictures/Chapter_Theory_figs_ZHdiagram.png}
-            \caption{Higgs-Strahlung}
+            \caption{Higgs-Strahlung.}
             \label{fig:higgsStrahlung}
         \end{subfigure}
         ~%\qquad
@@ -77,7 +85,7 @@
           %(or a blank line to force the subfigure onto a new line)
         \begin{subfigure}[t]{0.3\textwidth}
             \includegraphics[width = 0.8\textwidth]{Pictures/Chapter_Theory_figs_nunuHdiagram.png}
-            \caption{WW-fusion}
+            \caption{Fusion de bosons W.}
             \label{fig:WW-fusion}
         \end{subfigure}
         ~%\qquad
@@ -85,7 +93,7 @@
           %(or a blank line to force the subfigure onto a new line)
         \begin{subfigure}[t]{0.3\textwidth}
             \includegraphics[width = 0.8\textwidth]{Pictures/HiggsProd_eeH.png}
-            \caption{ZZ-fusion}
+            \caption{Fusion de bosons Z.}
             \label{fig:ZZ-fusion}
         \end{subfigure}
         \caption{Diagrammes de Feynman des principaux processsus de production du boson de Higgs à l'ILC\cite{Asner2013}\cite{tian}.}
@@ -93,7 +101,7 @@
     \end{figure}    
 
   Contrairement aux canaux de production du boson de Higgs disponible au LHC, l'ILC est capable de produire directement le Higgs, soit par Higgs-strahlung (voir figure~\ref{fig:higgsStrahlung}), soit par la fusion de bosons W (voir figure~\ref{fig:WW-fusion}) ou alors par la fusion de bosons Z (voir figure~\ref{fig:ZZ-fusion}).
-  Néanmoins, à 350 GeV, seulement le Higgs-strahlung et la fusion WW est observable.
+  Néanmoins, à 350 GeV, seulement le Higgs-strahlung et la fusion WW sont observables.
   Je me suis tout particulièrement intéressé à l'état final comportant un boson de Higgs et deux neutrinos.
   %L'état final qui m'a intéressé est celui où le Higgs et deux neutrinos sont produits, soit par Higgs-strahlung (voir figure~\ref{fig:higgsStrahlung}), soit par fusion de bosons W (voir figure~\ref{fig:WW-fusion}).
   Ces canaux de production permettent une observation particulièrement précise des propriétés du boson de Higgs. 
@@ -106,7 +114,7 @@
   Deux bruits de fonds sont considérés, ceux menant à un état final identique à notre signal, ou alors ceux produisant un réponse dans le détecteur similaire à celle du signal.
   Afin de différencier le signal du bruit, certains critères doivent être définis.
   Tout d'abord, nous nous attendons à observer deux jets provenant de la désintégration du boson de Higgs. 
-  Ainsi, tous les évènements ne contenant un lepton isolé ne sont pas pris en compte.
+  Ainsi, tous les évènements ne contenant qu'un lepton isolé ne sont pas pris en compte.
   Puis, une sélection sur l'impulsion transverse visible est effectuée afin de réduire l'impact des hadrons produits par interaction $\gamma\gamma$.
   Ensuite, les évènements sont sélectionnés par rapport à l'hypothèse sur la structure de notre signal.
   Par exemple, la masse visible doit correspondre à la signature du boson de Higgs, qui est de 125 GeV.
@@ -121,19 +129,20 @@
 
   \section{Préparation d'une campagne de tests sous faisceaux}
 
-    Comme décrit en introduction, l'objectif de la collaboration PLUME est d'atteindre un budget de matière se rapprochant de 0.3\% de $X_0$ pour une résolution spatiale meilleure que 4 microns.
-  La structure mécanique est validée grâce à l'utilisation de MIMOSA-26, des détecteurs monolithiques complexes qui ont une résolution spatiale de $< 4 \mu$m.
+    Comme décrit en introduction, l'objectif de la collaboration PLUME est d'atteindre un budget de matière se rapprochant de 0.3 \% de $X_0$ pour une résolution spatiale meilleure que 4 microns.
+  La structure mécanique est validée grâce à l'utilisation de MIMOSA-26, des détecteurs monolithiques complexes qui ont une résolution spatiale de $< 4$ $\mu$m.
   Le traitement des données est directement intégré dans les photocites qui collectent les charges. 
   Il permet de numériser directement le signal, grâce à des discriminateurs et de réduire la bande-passante de transmission des données par le biais d'un système de suppression de zéro (ne prend pas en compte les zéros envoyés par les pixels, qui ne représentent pas un signal physique intéressant).
   Cette méthode permet d'enregistrer les informations individuelles de plus de un million d'impacts/cm$^2$/s sur un capteur contenant plus de 500000 pixels sur une surface de 2 cm$^2$.
   
    \subsection{Validation en laboratoire des échelles PLUME}
 
+  Les échelles PLUME sont les premiers prototypes double faces associant un budget de matière se rapprochant de 0.3 \% de $X_0$ et des pistes métallisées adaptées à la surface de détection de $1 \times 12 \text{cm}^2$, afin de réduire les zones mortes du détecteurs. 
   Chaque module doit être validé en laboratoire afin de s'assurer que l'assemblage n'altère pas les capteurs utilisés.
   Après une inspection visuelle afin de contrôler l'alignement de chaque capteur l'un par rapport à l'autre et qu'aucun d'eux, ni aucune connexion n'ait été endommagé pendant l'assemblage, chaque échelle est testée électriquement.
   La consommation des capteurs, le contrôle JTAG ainsi que la présence de pixels morts sont vérifiés, pour ensuite évaluer les seuils des comparateurs qui vont permettre de discriminer le signal du bruit.
-  Leur point de fonctionnement optimal, leur bruit et offset sont obtenus grâce à une courbe de transfert qui représente la réponse des comparateurs à différents seuils et permet de définir un seuil où le bruit du capteur est supprimé sans en altérer ces capacités de détection.
-  Une analyse permet enfin de déterminer le taux de fantôme de chaque capteur et de vérifier qu'ils détectent correctement une source radioactive.
+  Leur point de fonctionnement optimal, leur bruit et piédestal sont obtenus grâce à une courbe de transfert qui représente la réponse des comparateurs à différents seuils et permet de définir un seuil où le bruit du capteur est supprimé sans en altérer ces capacités de détection.
+  Ensuite, les propriétés de détection de ces capteurs sont contrôlés grâce à une analyse qui permet de déterminer le taux de fantôme de chaque capteur et de vérifier qu'ils détectent correctement une source radioactive.
   
     \subsection{Étude de la déformation des échelles lors d'une campagne de faisceau test}
 
@@ -146,13 +155,13 @@
   Apprendre à quantifier ces déformations et les prendre en compte pendant notre analyse est essentiel pour valider nos prototypes.
   Les capteurs sont modélisés par une surface parfaitement plane.
   Or, la position de ces plans en trois dimensions est différente puisque ceux-ci peuvent être plus ou moins déformés.
-  Ainsi comme il a été observé, la distribution du résidu devient plus importante lorsque l'angle d'incidence n'est plus normal à la surface du détecteur.
+  Ainsi comme il a été observé, la distribution du résidu, ou distance entre la position du pixel touché et de la trace extrapolée, devient plus importante lorsque l'angle d'incidence n'est plus normal à la surface du détecteur.
   Il faut donc prendre en compte cette déformation dans notre analyse afin de recalculer la position exacte de chaque pixel en 3 dimensions et l'extrapolation exacte sur le plan de la trajectoire. 
-  Grâce à une première étude réalisée par un doctorant du groupe PICSEL et un article de la collaboration CMS sur l'alignement du trajectomètre\footnote{arXiv:0910.2505 [physics.ins-det]}, il m'a été possible de mettre en place un algorithme permettant de déterminer la forme de notre capteur à l'aide de polynômes de Legendre. 
+  Grâce à une première étude réalisée par un doctorant du groupe PICSEL et un article de la collaboration CMS sur l'alignement du trajectomètre\cite{Chatrchyan:2009sr}, il m'a été possible de mettre en place un algorithme permettant de déterminer la forme de notre capteur à l'aide de polynômes de Legendre. 
   En prenant en compte l'angle d'incidence des particules, la résolution spatiale est améliorée. 
-  Par exemple, l'analyse d'une acquisition où le module PLUME est incliné de 36\degre, a mis en évidence une déformation en corrélant le résidu (distance entre la position de la trace extrapolée et du pixel touché) à la position de l'impact sur la matrice de détection, par rapport à une acquisition où le plan est en incidence normale.
-  En ajustant la figure précédente par un polynôme de Legendre, les coefficients obtenus permettent de paramétrer la surface du capteur et ainsi de minimiser le résidu. 
-  La déviation standard de les distribution des résidus, qui définit la résolution spatiale, passe de 11.84 $\mu m$ à 8.2 $\mu m$, sans prendre en compte la résolution du télescope qui n'est pas dans une configuration optimale.
+  Par exemple, l'analyse d'une acquisition où le module PLUME est incliné de 28\degre, a mis en évidence une déformation en corrélant le résidu à la position de l'impact sur la matrice de détection, par rapport à une acquisition où le plan est en incidence normale.
+  En ajustant la figure~\ref{fig:deformation} (celle du milieu) par un polynôme de Legendre, les coefficients obtenus permettent de paramétrer la surface du capteur et ainsi de minimiser le résidu, comme montré sur la figure~\ref{fig:correction}. 
+  La déviation standard de les distribution des résidus, qui définit la résolution spatiale, passe de 9.8 $\mu m$ à 5.3 $\mu m$, sans prendre en compte la résolution du télescope qui n'est pas dans une configuration optimale.
 
 
     \begin{figure}  
@@ -170,7 +179,7 @@
             \caption{Après la prise en compte des déviations.}
             \label{fig:correction}
         \end{subfigure}
-        \caption{Graphiques représentant la distance point d'impat/trace sur la direction horizontale en fonction de la position du point d'impact dans la direction verticale (haut), la distance point d'impact/trace dans la direction horizontale en fonction de la position du point d'impact dans la même direction (milieu) ainsi que la distribution de la distance du point d'impact par rapport à la position de la trace (bas). La correction permet d'atteindre une résolution de 6 $\mu$m au lieu de 11 $\mu$m.}
+        \caption{Graphiques représentant la distance point d'impat/trace sur la direction horizontale en fonction de la position du point d'impact dans la direction verticale (haut), la distance point d'impact/trace dans la direction horizontale en fonction de la position du point d'impact dans la même direction (milieu) ainsi que la distribution de la distance du point d'impact par rapport à la position de la trace (bas). La correction permet d'atteindre une résolution de 5.3 $\mu$m au lieu de 9.8 $\mu$m.}
         \label{fig:defCor}
     \end{figure}    
 
@@ -200,16 +209,18 @@
   Au cours de mon travail de thèse, j'ai pu étudier l'intérêt d'un collisionneur linéaire électrons/positrons afin de réaliser des mesures précises des propriétés du boson de Higgs.
   Je me suis tout particulièrement intéressé à un canal de désintégration inaccessible au LHC où l'état final comporte le boson de Higgs ainsi que deux neutrinos. 
   Les différents critères permettant de différencier le signal étudié du bruit ont été étudiés grâce à des sélections sur la région d'intérêt.
-  Malheureusement, le temps qui m'a été imparti pour réaliser ma thèse ne pas permis de continuer l'étude afin d'améliorer les performances d'identification des quarks charmés par le détecteur de vertex.
+  Malheureusement, le temps qui m'a été imparti pour réaliser mes travaux ne pas permis d'étudier les performances d'identification des quarks charmés pour différentes géométries de détecteur de vertex.
 
-  Mon travail c'est principalement concentré autour de l'étude et de la validation des premiers concepts d'échelles de détections double faces atteignant un budget de matière de seulement 0.3 \% $X_0$.
-  Un banc de validation a été mis en place au DESY et a permis de vérifier que les performances des capteurs utilisés ne sont pas impactées par la structure unique des échelles.
-  Par ailleurs, les résultats de la campagne en faisceau test effectuées au CERN en 2011 ont permis de mettre en évidence l'impact de la déformation des capteurs sur la résolution spatiale de notre échelle lorsque celle-ci ne se trouve plus en incidence normale.
-  Un algorithme permettant d'extrapoler les déformations subies par l'échelle et de le prendre en compte lors de l'analyse a montré des résultats encourageants.....
-
+  Ma recherche c'est principalement concentrée sur de l'étude et de la validation des premiers concepts d'échelles de détections double faces atteignant un budget de matière de seulement 0.3 \% $X_0$.
+  Un banc de validation a été mis en place au DESY et a permis de vérifier que les performances des capteurs utilisés ne sont pas impactées par la structure unique de ces échelles.
+  Par ailleurs, les résultats de la campagne en faisceau test effectuée au CERN en 2011 ont permis de mettre en évidence l'impact de la déformation des capteurs sur la résolution spatiale de notre échelle lorsque celle-ci ne se trouve plus en incidence normale.
+  L'algorithme développé qui utilise des polynômes de Legendre pour extrapoler la position des capteurs en trois dimensions a permis de réduire l'impact des déformations sur les résultats d'analyse en faisceau test.
+  Bien que les résultats soient encourageants, l'algorithme peut-être amélioré en utilisant une méthode itérative afin de déterminer plus précisément la position de l'impact sur le capteur.
+  
   Enfin, grâce au faisceau délivré par le DESY, ainsi que différents logiciels d'analyse ont permis à la collaboration de réaliser pour la première fois la mesure du budget de matière de nos échelles.
+  Les premiers résultats devraient être obtenus afin la soumission du manuscrit et présentés lors de la soutenance de thèse.
 
-  Les premiers résultats obtenus par la collaboration sur les échelles PLUME sont prometteurs pour une utilisation dans le cadre de l'ILC.
+  Le travail effectué au cours de ces trois années sont prometteurs pour une utilisation des échelles PLUMES dans le cadre de l'ILC.
   D'autres applications sont par ailleurs possibles, comme son utilisation pour l'estimation des conditions de bruit de fond machine dans l'expérience BEAST, juste avant le démarrage de Belle-II.
 
  
@@ -224,7 +235,7 @@
   \end{itemize}
   Publication :
   
-  B. BOITRELLE, J. Baudot, G. Claus, O. Clausse, L. Cousin, R. Gauld, M. Goffe, J. Goldsteind, I.M. Gregor, M. Imhoff, U. Koetz, R. Maria, A. Nomerotski, R. Page, M. Szelezniak and M. Winter "The PLUME performance evaluation" (en préparation)
+  B. Boitrelle, J. Baudot, G. Claus, O. Clausse, L. Cousin, R. Gauld, M. Goffe, J. Goldsteind, I.M. Gregor, M. Imhoff, U. Koetz, R. Maria, A. Nomerotski, R. Page, M. Szelezniak and M. Winter "The PLUME performance evaluation" (en préparation)
 
   \section*{Formations}
  
